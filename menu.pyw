@@ -5,7 +5,6 @@ from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtSql import QSqlDatabase,QSqlQuery, QSqlTableModel
 import ctypes
 qtCreatorFile = "menu.ui" # Nombre del archivo qt aquí.
-import pymysql
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -28,7 +27,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
 #establecer conexion con la base de datos
 
-  
+
 
 #valodacion de conexion a la base de datos
         self.db = QSqlDatabase.addDatabase('QMYSQL')#driver de la base de datos en este caso mysql tambien funciona para mariadb
@@ -37,7 +36,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.db.setUserName("usuariocasino")#usuario para conectarse a la base de datos
         self.db.setPassword("casino")#contraseña del usuario para la base de datos
         #validaciones de conexion a la base de datos
-     self.botonganancia.clicked.connect(self.insertarDatos)
+        self.botonganancia.clicked.connect(self.insertarDatos)
     def insertarDatos(self):
      estado=self.db.open()
      if estado == False:
@@ -60,7 +59,7 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
        self.db.close()
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     app =  QtWidgets.QApplication(sys.argv)
     window = MyApp()
     window.show()

@@ -26,11 +26,9 @@
 ## solo necesitamos el valor que genera el total de la perdida y el valor de la perdida
 
 # ejemplo
-
 ## dinero recargado: 5000
 ## valor de perdida: 3000 (generado por la apuesta)
 ##  valor recargado - valor perdida =valor que genera total (5000-3000=2000)
-
 ## valor de la perdida : 3000
 
 
