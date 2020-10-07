@@ -9,5 +9,9 @@ sys.path.append("..") #Necesario para poder importar basedatos
 import bd #Importa el script bd.py
 ```
 luego pueden usar:
+
+
+```python
 bd.insertarDatos(100,100)
 valor = bd.traerValor()
+```
