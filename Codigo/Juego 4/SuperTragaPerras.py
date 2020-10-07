@@ -23,7 +23,7 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.comboboxChanged()
         self.migame = JuegoTragaperras()
         self.migame.hahaprintxd()
-        bd.insertarDatos(100,100) #Insertadatos a la basededatos
+        bd.insertarDatos(10000,9900) #Insertadatos a la basededatos
         #creo el juego
 
     def comboboxChanged(self):
