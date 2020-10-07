@@ -16,7 +16,10 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self._apostar.clicked.connect(self.printapostar)
-    
+        self._nseleccionado.currentIndexChanged.connect(self.comboboxChanged)
+        self.comboboxChanged()
+    def comboboxChanged(self):
+        self._cuota.setText(str(self._nseleccionado.currentIndex()))
     def printapostar(self):
         self._saldo.setText(str(self._modalidad.currentIndex() + self._nseleccionado.currentIndex()+2))
 
