@@ -4,7 +4,7 @@ import sys,re
 from PyQt5 import uic, QtWidgets, QtGui
 
 from PyQt5.QtWidgets import QMessageBox
-
+from ..tst import *
 from Tragaperras import JuegoTragaperras
 uiFile = "./SuperTragaperrasUltimateEdition.ui" # Nombre del archivo aquí. Debe estar en la misma carpeta
 
@@ -21,6 +21,7 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.comboboxChanged()
         self.migame = JuegoTragaperras()
         self.migame.hahaprintxd()
+        test()
         #creo el juego
 
     def comboboxChanged(self):
