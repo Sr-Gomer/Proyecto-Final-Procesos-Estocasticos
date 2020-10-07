@@ -15,9 +15,11 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-    #     self.BOTON_ejemplo.clicked.connect(self.EjemploPrint)
-    # def EjemploPrint(self):
-    #     print("ESE BOTON HIZO ALGO")
+        self._apostar.clicked.connect(self.printapostar)
+    
+    def printapostar(self):
+        self._saldo.setText(str(self._modalidad.currentIndex() + self._nseleccionado.currentIndex()+2))
+
         
 
 def Run():
