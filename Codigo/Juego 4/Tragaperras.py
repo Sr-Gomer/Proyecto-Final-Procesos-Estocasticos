@@ -57,7 +57,7 @@ class JuegoTragaperras:
     def hahaprintxd(self):
         print("SIMEDISCULPANPROCEDOAXDDDDDD")
 
-Juego = JuegoTragaperras()
-Juego.Apostar(5, 3)
-print(Juego.dinGanado)
-print(Juego.saldo)
+# Juego = JuegoTragaperras()
+# Juego.Apostar(5, 3)
+# print(Juego.dinGanado)
+# print(Juego.saldo)
