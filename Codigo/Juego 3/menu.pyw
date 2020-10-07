@@ -25,9 +25,10 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     #     validar=re.match('0-9-[.]',entradaperdida,re.I)
     #     entradaperdida=self.entradaperdida.text()
 
-
-if __name__ == "__main__": 
+def Run(): 
     app =  QtWidgets.QApplication(sys.argv)
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
+
+Run()
