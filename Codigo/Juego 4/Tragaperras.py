@@ -54,6 +54,8 @@ class JuegoTragaperras:
                 self.dinGanado = self.cuota * self.multiplicador
                 
         self.saldo += self.dinGanado - self.cuota
+    def hahaprintxd(self):
+        print("SIMEDISCULPANPROCEDOAXDDDDDD")
 
 Juego = JuegoTragaperras()
 Juego.Apostar(5, 3)
