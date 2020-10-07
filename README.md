@@ -2,7 +2,7 @@
 Aquí se va a reposar toda la información del proyecto final, cada línea de código y los datos que sean necesarios
 
 # Como conectar a la base de datos
-Para conectar con la base de datos deben incluir estas lineas al principio luego de importar :
+Para conectar con la base de datos deben incluir estas lineas al principio luego de importar sys, re:
 
 ```python
 sys.path.append("..") #Necesario para poder importar basedatos
