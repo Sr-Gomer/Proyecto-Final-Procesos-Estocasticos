@@ -4,6 +4,7 @@ import sys,re
 from PyQt5 import uic, QtWidgets, QtGui
 
 from PyQt5.QtWidgets import QMessageBox
+from BaseCode import RuletaClass as Ruleta
 
 uiFile = "./ruletaui.ui" # Nombre del archivo aquí. Debe estar en la misma carpeta
 ruedaImage = "./imagenejemplo.png"
