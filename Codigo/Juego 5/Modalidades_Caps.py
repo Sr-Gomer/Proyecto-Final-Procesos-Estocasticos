@@ -16,10 +16,17 @@ import numpy.random as rnd
 class Craps:
     def __init__(self):
         self.saldo = 0
+        self.dinGanado = 0
+        self.dado1 = 0
+        self.dado2 = 0
+        self.transaccion = 0
         self.ActualizarSaldo()
+        print("JUEGO DE CRAPS INICIADO")
     def ActualizarSaldo(self):
-        # self.saldo = bd.traerValor()
-        self.saldo = 1900
+        self.saldo = bd.traerValor()
+        
+    def getData(self):
+        return [self.saldo,self.transaccion]
 
     def Mod1(self,apuesta,dado1,dado2):
         self.cuota = 1.2
@@ -69,7 +76,7 @@ class Craps:
         #Recibo parametros
         self.ActualizarSaldo()
         if self.saldo <= _apuesta:
-            return "No posee el suficiente dinero"
+            return False
         else:
             if _mod == 1:
                 self.dinGanado = self.Mod1(_apuesta,self.dado1,self.dado2)
@@ -84,17 +91,7 @@ class Craps:
             else:
                 print("MODALIDAD INCORRECTA")
 
-            
             self.transaccion = self.dinGanado - _apuesta
             self.saldo += self.transaccion
-            print("saldo : " + str(self.saldo))
-            print("transaccion : " + str(self.transaccion))
-            print("_apuesta : " + str(_apuesta))
-            # bd.insertarDatos(self.saldo,self.transaccion)
-            #Actualizar base de datos
-            return self.saldo
-
-juego = Craps()
-
-juego.Apostar(5,100,4,5)
-print("Done")
+            bd.insertarDatos(self.saldo,self.transaccion)
+            return True

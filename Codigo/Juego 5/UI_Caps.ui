@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>906</width>
-    <height>656</height>
+    <width>1016</width>
+    <height>710</height>
    </rect>
   </property>
   <property name="cursor">
@@ -23,11 +23,11 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="_jugar">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>520</y>
+      <x>700</x>
+      <y>540</y>
       <width>231</width>
       <height>61</height>
      </rect>
@@ -79,366 +79,349 @@ border-style: outset;
 border-width: 4px;</string>
     </property>
     <property name="text">
-     <string>Super Casino</string>
+     <string>CRAPS</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>350</y>
-      <width>91</width>
-      <height>51</height>
+      <y>120</y>
+      <width>671</width>
+      <height>191</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat Shadow</family>
-      <pointsize>36</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 192, 44);
+    <layout class="QFormLayout" name="formLayout">
+     <item row="3" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label_11">
+         <property name="font">
+          <font>
+           <family>Casino Flat Shadow</family>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 192, 44);
 background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>Hop</string>
-    </property>
+         </property>
+         <property name="text">
+          <string>Apuesta</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="_apuesta">
+         <property name="font">
+          <font>
+           <family>LCD2</family>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="3" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="font">
+          <font>
+           <family>Casino Flat Shadow</family>
+           <pointsize>36</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 192, 44);
+background-color: rgba(255, 255, 255, 0);</string>
+         </property>
+         <property name="text">
+          <string>Modalidad</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="_modalidad">
+         <property name="font">
+          <font>
+           <family>Casino Flat</family>
+           <pointsize>11</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Segura</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Barra de NO Pase</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Par</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Línea de pase</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Hop</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QWidget" name="formLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>30</x>
+      <y>490</y>
+      <width>543</width>
+      <height>153</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="font">
+        <font>
+         <family>Casino Flat Shadow</family>
+         <pointsize>36</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 192, 44);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Ganancia/Perdida</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="font">
+        <font>
+         <family>Casino Flat Shadow</family>
+         <pointsize>36</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 192, 44);
+background-color: rgba(255, 255, 255, 0);</string>
+       </property>
+       <property name="text">
+        <string>Dinero actual</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="_transaccion">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(23, 127, 255);</string>
+       </property>
+       <property name="text">
+        <string>Transaccion</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="_dineroActual">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(23, 127, 255);</string>
+       </property>
+       <property name="text">
+        <string>DineroActual</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="_hopoption">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
       <y>320</y>
-      <width>91</width>
-      <height>51</height>
+      <width>481</width>
+      <height>141</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat</family>
-      <pointsize>18</pointsize>
-     </font>
+    <property name="title">
+     <string/>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 192, 44);
+    <widget class="QWidget" name="verticalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>30</y>
+       <width>181</width>
+       <height>85</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="_dadoPL">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="font">
+           <font>
+            <family>Casino Flat</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 192, 44);
 background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>Dado #1</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>370</y>
-      <width>91</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat</family>
-      <pointsize>18</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 192, 44);
+          </property>
+          <property name="text">
+           <string>Dado #1</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="_hop1">
+          <property name="font">
+           <font>
+            <family>LCD2</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>6</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="font">
+           <font>
+            <family>Casino Flat</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 192, 44);
 background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>Dado #2</string>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="_modalidad">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>230</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat</family>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>Segura</string>
+          </property>
+          <property name="text">
+           <string>Dado #2</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="_hop2">
+          <property name="font">
+           <font>
+            <family>LCD2</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>6</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="_hoptext">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>121</width>
+       <height>81</height>
+      </rect>
      </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Barra de NO Pase</string>
+     <property name="font">
+      <font>
+       <family>Casino Flat Shadow</family>
+       <pointsize>36</pointsize>
+      </font>
      </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Par</string>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(255, 192, 44);
+background-color: rgba(255, 255, 255, 0);</string>
      </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Línea de pase</string>
-     </property>
-    </item>
-    <item>
      <property name="text">
       <string>Hop</string>
      </property>
-    </item>
+    </widget>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QWidget" name="verticalLayoutWidget_5">
     <property name="geometry">
      <rect>
-      <x>560</x>
-      <y>160</y>
-      <width>231</width>
-      <height>51</height>
+      <x>720</x>
+      <y>340</y>
+      <width>191</width>
+      <height>106</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat Shadow</family>
-      <pointsize>36</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 192, 44);
+    <layout class="QVBoxLayout" name="_dadoSL">
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <family>Casino Flat Shadow</family>
+         <pointsize>36</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 192, 44);
 background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>Modalidad</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>620</x>
-      <y>330</y>
-      <width>141</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat Shadow</family>
-      <pointsize>36</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 192, 44);
-background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>Dados</string>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="_resultadoDado2">
-    <property name="geometry">
-     <rect>
-      <x>730</x>
-      <y>400</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLCDNumber" name="_resultadoDado1">
-    <property name="geometry">
-     <rect>
-      <x>570</x>
-      <y>400</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_9">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>540</y>
-      <width>301</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat Shadow</family>
-      <pointsize>36</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 192, 44);
-background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>Dinero actual</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="_apuesta">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>230</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>LCD2</family>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_11">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>160</y>
-      <width>181</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat Shadow</family>
-      <pointsize>36</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 192, 44);
-background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>Apuesta</string>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="_hop1">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>330</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>LCD2</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>6</number>
-    </property>
-   </widget>
-   <widget class="QSpinBox" name="_hop2">
-    <property name="geometry">
-     <rect>
-      <x>310</x>
-      <y>380</y>
-      <width>51</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>LCD2</family>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="minimum">
-     <number>1</number>
-    </property>
-    <property name="maximum">
-     <number>6</number>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_12">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>480</y>
-      <width>391</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Casino Flat Shadow</family>
-      <pointsize>36</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 192, 44);
-background-color: rgba(255, 255, 255, 0);</string>
-    </property>
-    <property name="text">
-     <string>Ganancia/Perdida</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="_transaccion">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>500</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>LCD2</family>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="_dineroActual">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>560</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>LCD2</family>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
+       </property>
+       <property name="text">
+        <string>Dados</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLCDNumber" name="_resultadoDado1"/>
+       </item>
+       <item>
+        <widget class="QLCDNumber" name="_resultadoDado2"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -446,8 +429,8 @@ background-color: rgba(255, 255, 255, 0);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>906</width>
-     <height>21</height>
+     <width>1016</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
