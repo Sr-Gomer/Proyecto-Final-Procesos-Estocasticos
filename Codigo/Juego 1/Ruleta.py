@@ -17,6 +17,7 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self.Mijuego= RuletaClass()
+        self._saldoInicial.setText()
         self.img = QtGui.QPixmap(ruedaImage) # carga la imagen
         self._imagen.setPixmap(self.img) #Le pone la imagen al label
         self._Lanzar.clicked.connect(self.ejemplobotonprint)#Conecta el boton a el metodo

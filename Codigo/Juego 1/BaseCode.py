@@ -6,13 +6,13 @@ This is a temporary script file.
 """
 import numpy as np
 import numpy.random as rnd
-
+import bd
 
 class RuletaClass:
    
-   def __init__(self,Saldo,PlataJugar):
-         self.Saldo = 7000 #Saldo con el que va a jugar el jugador 
-         self.PlataJugar = 100; #plata con la que se va apostar 
+   def __init__(self,value):
+         self.Saldo = bd.traerValor() #Saldo con el que va a jugar el jugador 
+         self.PlataJugar = value; #plata con la que se va apostar 
         
    def Lanzar(self,index,value):
        if index == 0:
@@ -32,8 +32,10 @@ class RuletaClass:
         
         if numero == numeroApostado:
             self.Saldo += self.PlataJugar * 37
+            bd.insertarDatos(self.Saldo,self.PlataJugar)
         else:
             self.Saldo-= self.PlataJugar
+            bd.insertarDatos(self.Saldo,-1*self.PlataJugar)
             
    def Modo2(self,value): #apuesta color
          numero = rnd.randint(0,37,1) #generador de la bola
@@ -53,25 +55,30 @@ class RuletaClass:
             
          if colorResultado == colorApostado:
             self.Saldo+=self.PlataJugar * multiplicador
+            bd.insertarDatos(self.Saldo,self.PlataJugar)
          else:
             self.Saldo-= self.PlataJugar
+            bd.insertarDatos(self.Saldo,-1*self.PlataJugar)
             
    def Modo3(self):#apuesta par
         numero = rnd.randint(0,37,1) #generador de la bola
         
         if numero % 2 == 0:
             self.Saldo += self.PlataJugar * 2
+            bd.insertarDatos(self.Saldo,self.PlataJugar)
         else:
             self.Saldo-= self.PlataJugar
+            bd.insertarDatos(self.Saldo,-1*self.PlataJugar)
    
    def Modo4(self):#apuesta impar
         numero = rnd.randint(0,37,1) #generador de la bola
         
         if numero % 2 != 0:
             self.Saldo += self.PlataJugar * 2
+            bd.insertarDatos(self.Saldo,self.PlataJugar)
         else:
             self.Saldo-= self.PlataJugar
-            
+            bd.insertarDatos(self.Saldo,-1*self.PlataJugar)
  
    def Modo5(self,value): #apuesta rango Numeros
          numero = rnd.randint(0,37,1) #generador de la bola
@@ -93,8 +100,10 @@ class RuletaClass:
             multiplicador = 37
          if rangoApostado == RangoResultado:
             self.Saldo += self.PlataJugar * multiplicador
+            bd.insertarDatos(self.Saldo,self.PlataJugar)
          else:
             self.Saldo -= self.PlataJugar
+            bd.insertarDatos(self.Saldo,-1*self.PlataJugar)
             
             
        
