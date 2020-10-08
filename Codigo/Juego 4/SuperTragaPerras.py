@@ -1,6 +1,7 @@
 #Copiar el el script y no el .py, El .py lo llaman igual que su juego 
 
 import sys,re
+import numpy as np
 
 sys.path.append("..") #Necesario para poder importar basedatos
 import bd #Importa el script bd.py
@@ -19,19 +20,24 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         self._apostar.clicked.connect(self.printapostar)
-        self._nseleccionado.currentIndexChanged.connect(self.comboboxChanged)
+        self._modalidad.currentIndexChanged.connect(self.comboboxChanged)
         self.comboboxChanged()
         self.migame = JuegoTragaperras()
-        self.migame.hahaprintxd()
-        bd.insertarDatos(10000,9900) #Insertadatos a la basededatos
+        self._saldo.setText(str(self.migame.saldo))
+        #Insertadatos a la basededatos
         #creo el juego
 
     def comboboxChanged(self):
-        self._cuota.setText(str(bd.traerValor()))
+        self.cuotas = np.array([2, 3, 36, 36, 216])
+        self._cuota.setText(str(self.cuotas[self._modalidad.currentIndex()]))
         
     def printapostar(self):
-        self._saldo.setText(str(self._modalidad.currentIndex() + self._nseleccionado.currentIndex()+2))
-
+        self.migame.Apostar(self._modalidad.currentIndex()+1, self._nseleccionado.currentIndex()+1)
+        self._resultado.setText(str(self.migame.resultado))
+        self._saldo.setText(str(self.migame.saldo))
+        self._valorganado.setText(str(self.migame.dinGanado))
+        #self._saldo.setText(str(self._modalidad.currentIndex() + self._nseleccionado.currentIndex()+2))
+        
         
 
 def Run():
