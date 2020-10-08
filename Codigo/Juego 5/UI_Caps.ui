@@ -26,8 +26,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>510</y>
+      <x>630</x>
+      <y>520</y>
       <width>231</width>
       <height>61</height>
      </rect>
@@ -85,9 +85,9 @@ border-width: 4px;</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>70</x>
       <y>350</y>
-      <width>81</width>
+      <width>91</width>
       <height>51</height>
      </rect>
     </property>
@@ -102,7 +102,7 @@ border-width: 4px;</string>
 background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
-     <string>hop</string>
+     <string>Hop</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -151,10 +151,10 @@ background-color: rgba(255, 255, 255, 0);</string>
      <string>Dado #2</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="_modalidad">
     <property name="geometry">
      <rect>
-      <x>660</x>
+      <x>610</x>
       <y>230</y>
       <width>141</width>
       <height>31</height>
@@ -174,7 +174,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <item>
      <property name="text">
-      <string>Linea de Paso</string>
+      <string>Segura</string>
      </property>
     </item>
     <item>
@@ -184,26 +184,26 @@ background-color: rgba(255, 255, 255, 0);</string>
     </item>
     <item>
      <property name="text">
-      <string>Hop</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
       <string>Par</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Segura</string>
+      <string>Línea de pase</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hop</string>
      </property>
     </item>
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>170</y>
-      <width>111</width>
+      <x>560</x>
+      <y>160</y>
+      <width>231</width>
       <height>51</height>
      </rect>
     </property>
@@ -218,7 +218,7 @@ background-color: rgba(255, 255, 255, 0);</string>
 background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
-     <string>modo</string>
+     <string>Modalidad</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -244,7 +244,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      <string>Dados</string>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdNumber">
+   <widget class="QLCDNumber" name="_resultadoDado2">
     <property name="geometry">
      <rect>
       <x>730</x>
@@ -254,7 +254,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </rect>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdNumber_2">
+   <widget class="QLCDNumber" name="_resultadoDado1">
     <property name="geometry">
      <rect>
       <x>570</x>
@@ -267,9 +267,9 @@ background-color: rgba(255, 255, 255, 0);</string>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>170</y>
-      <width>141</width>
+      <x>50</x>
+      <y>540</y>
+      <width>301</width>
       <height>51</height>
      </rect>
     </property>
@@ -284,60 +284,13 @@ background-color: rgba(255, 255, 255, 0);</string>
 background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
-     <string>Dinero</string>
+     <string>Dinero actual</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_10">
+   <widget class="QLineEdit" name="_apuesta">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>220</y>
-      <width>101</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>LCD2</family>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgba(255, 255, 255, 0);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>$50.000</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>470</y>
-      <width>481</width>
-      <height>121</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Casino 3D Filled Marquee</family>
-      <pointsize>72</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: qlineargradient(spread:reflect, x1:0, y1:0.989, x2:0, y2:0.017, stop:0 rgba(248, 213, 22, 255), stop:0.528409 rgba(193, 161, 16, 255), stop:0.755682 rgba(255, 252, 155, 255), stop:1 rgba(248, 213, 22, 255));
-background-color: rgba(255, 255, 255, 0);
-color: qlineargradient(spread:reflect, x1:0, y1:0.989, x2:0, y2:0.017, stop:0 rgba(248, 213, 22, 255), stop:0.528409 rgba(193, 161, 16, 255), stop:0.755682 rgba(255, 252, 155, 255), stop:1 rgba(248, 213, 22, 255));</string>
-    </property>
-    <property name="text">
-     <string>$400000</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
+      <x>120</x>
       <y>230</y>
       <width>161</width>
       <height>31</height>
@@ -356,8 +309,8 @@ color: qlineargradient(spread:reflect, x1:0, y1:0.989, x2:0, y2:0.017, stop:0 rg
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>170</y>
+      <x>110</x>
+      <y>160</y>
       <width>181</width>
       <height>51</height>
      </rect>
@@ -376,7 +329,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      <string>Apuesta</string>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox_3">
+   <widget class="QSpinBox" name="_hop1">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -401,7 +354,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      <number>6</number>
     </property>
    </widget>
-   <widget class="QSpinBox" name="spinBox">
+   <widget class="QSpinBox" name="_hop2">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -424,6 +377,67 @@ background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="maximum">
      <number>6</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>480</y>
+      <width>391</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Casino Flat Shadow</family>
+      <pointsize>36</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 192, 44);
+background-color: rgba(255, 255, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>Ganancia/Perdida</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="_transaccion">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>500</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>LCD2</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="_dineroActual">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>560</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>LCD2</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
    </widget>
   </widget>
