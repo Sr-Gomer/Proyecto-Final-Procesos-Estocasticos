@@ -4,98 +4,118 @@ Spyder Editor
 
 This is a temporary script file.
 """
+import sys
+sys.path.append("..") #Necesario para poder importar basedatos
+import bd #Importa el script bd.py
 import numpy as np
 import numpy.random as rnd
 
 
 class RuletaClass:
+   def __init__(self,msgBox):
+         self.Saldo = 0 #Saldo con el que va a jugar el jugador 
+         self.PlataJugar = 0 #plata con la que se va apostar
+         self.transaccion = 0
+         self.ActualizarSaldo()
+         self.displayer = msgBox
    
-   def __init__(self,Saldo,PlataJugar):
-         self.Saldo = 7000 #Saldo con el que va a jugar el jugador 
-         self.PlataJugar = 100; #plata con la que se va apostar 
-        
-   def Lanzar(self,index,value):
-       if index == 0:
-          self.Modo1(value)
-       if index == 1:
-          self.Modo2(value)
-       if index == 2:
-          self.Modo3()
-       if index == 3:
-          self. Modo4()
-       if index == 4:
-          self.Modo5(value) 
+   def ActualizarSaldo(self):
+      self.Saldo = bd.traerValor()
+   def getSaldo(self):
+      return self.Saldo
+   def Lanzar(self,index,value,plata):
+      self.PlataJugar = plata
+      if index == 0:
+         self.Modo1(value)
+      if index == 1:
+         self.Modo2(value)
+      if index == 2:
+         self.Modo3()
+      if index == 3:
+         self. Modo4()
+      if index == 4:
+         self.Modo5(value)
+      self.Saldo += self.transaccion
+      bd.insertarDatos(self.Saldo,self.transaccion)
+      self.ActualizarSaldo()
         
    def Modo1(self,value): #apuesta numero
-        numero = rnd.randint(0,37,1) #generador de la bola
-        numeroApostado = value #numero con el que vamos a apostar
-        
-        if numero == numeroApostado:
-            self.Saldo += self.PlataJugar * 37
-        else:
-            self.Saldo-= self.PlataJugar
+      self.numero = rnd.randint(0,37,1) #generador de la bola
+      if self.numero == value:
+         self.transaccion = self.PlataJugar * 37
+         self.displayer("!ganaste , tu dado: " + str(value) + " dado resultado : " + str(self.numero))
+      else:
+         self.transaccion = -self.PlataJugar
+         self.displayer("Perdiste , tu dado: " + str(value) + " dado resultado : " + str(self.numero))
             
-   def Modo2(self,value): #apuesta color
-         numero = rnd.randint(0,37,1) #generador de la bola
-         colorApostado = value #color que aposto
-         colorResultado = 0
-         multiplicador = 0 #valor de multiplicador
+   def Modo2(self,colorapostado): #apuesta color
+      self.numero = rnd.randint(0,37,1) #generador de la bola
+      self.colorResultado = 0
+      self.multiplicador = 0 #valor de multiplicador
+      self.color = ""
+      if self.numero > 0 and self.numero <= 17:
+         self.colorResultado = 0
+         self.multiplicador  = 2
+         self.color = "Amarillo"
+      elif self.numero > 17 and self.numero <=35:
+         self.colorResultado = 1
+         self.multiplicador = 2
+         self.color = "Azul"
+      elif self.numero == 0 or self.numero == 36:
+         self.colorResultado = 2
+         self.multiplicador = 18
+         self.color = "Rojo"
          
-         if numero > 0 and numero <= 17:
-            colorResultado = 0
-            multiplicador  = 2
-         elif numero > 17 and numero <=35:
-            colorResultado = 1
-            multiplicador = 2
-         elif numero == 0 or numero == 36:
-            colorResultado = 2
-            multiplicador = 18
-            
-         if colorResultado == colorApostado:
-            self.Saldo+=self.PlataJugar * multiplicador
-         else:
-            self.Saldo-= self.PlataJugar
+      if self.colorResultado == colorapostado:
+         self.transaccion=self.PlataJugar * self.multiplicador
+         self.displayer("Ganaste " + str(self.transaccion) + ", con el color:" + str(self.color))
+      else:
+         self.transaccion = -self.PlataJugar
+         self.displayer("Perdiste " + str(self.transaccion) + ", con el color:" + str(self.color))
             
    def Modo3(self):#apuesta par
-        numero = rnd.randint(0,37,1) #generador de la bola
-        
-        if numero % 2 == 0:
-            self.Saldo += self.PlataJugar * 2
-        else:
-            self.Saldo-= self.PlataJugar
-   
+      self.numero = rnd.randint(0,37,1) #generador de la bola
+      if self.numero % 2 == 0:
+         self.transaccion = self.PlataJugar * 2
+         self.displayer("Ganaste "+str(self.transaccion)  + ", el número fue Par")
+      else:
+         self.transaccion = -self.PlataJugar
+         self.displayer("Perdiste "+str(self.transaccion)  + ", el número fue impar")
+
    def Modo4(self):#apuesta impar
-        numero = rnd.randint(0,37,1) #generador de la bola
-        
-        if numero % 2 != 0:
-            self.Saldo += self.PlataJugar * 2
-        else:
-            self.Saldo-= self.PlataJugar
-            
- 
-   def Modo5(self,value): #apuesta rango Numeros
-         numero = rnd.randint(0,37,1) #generador de la bola
-         rangoApostado = value #rango que aposto
-         RangoResultado = 0 #rango de numeros que salio        
-         multiplicador = 0 #valor de multiplicador
+      self.numero = rnd.randint(0,37,1) #generador de la bola
+      if self.numero % 2 != 0:
+         self.transaccion = self.PlataJugar * 2
+         self.displayer("Ganaste "+str(self.transaccion)  + ", el número fue Impar")
+      else:
+         self.transaccion = -self.PlataJugar
+         self.displayer("Perdiste "+str(self.transaccion)  + ", el número fue Par")
          
-         if numero > 0 and numero <= 12:
-            RangoResultado = 0
-            multiplicador  = 3
-         elif numero > 12 and numero <=24:
-            RangoResultado = 1
-            multiplicador = 3
-         elif numero > 24 and numero <=36:
-            RangoResultado = 2
-            multiplicador = 3
-         else:
-            RangoResultado = 3
-            multiplicador = 37
-         if rangoApostado == RangoResultado:
-            self.Saldo += self.PlataJugar * multiplicador
-         else:
-            self.Saldo -= self.PlataJugar
+ 
+   def Modo5(self,rangoApostado): #apuesta rango Numeros
+      self.numero = rnd.randint(0,37,1) #generador de la bola
+      self.RangoResultado = 0 #rango de numeros que salio        
+      self.multiplicador = 0 #valor de multiplicador
+      
+      if self.numero > 0 and self.numero <= 12:
+         self.RangoResultado = 0
+         self.multiplicador  = 3
+      elif self.numero > 12 and self.numero <=24:
+         self.RangoResultado = 1
+         self.multiplicador = 3
+      elif self.numero > 24 and self.numero <=36:
+         self.RangoResultado = 2
+         self.multiplicador = 3
+      else:
+         self.RangoResultado = 3
+         self.multiplicador = 37
+
+      if rangoApostado == self.RangoResultado:
+         self.transaccion = self.PlataJugar * self.multiplicador
+         self.displayer("Ganaste "+str(self.transaccion)  + ", el número fue: " + str(self.numero))
+      else:
+         self.transaccion = -self.PlataJugar
+         self.displayer("Perdiste "+str(self.transaccion)  + ", el número fue: " + str(self.numero))
             
             
        
-    
