@@ -1,0 +1,29 @@
+        self.lootBox = np.array([1, 2, 2, 3, 3, 3])
+        self.profit = 0
+        self.tier = 1
+        
+        self.saldo = bd.traerValor()
+
+        self.btnPlay.clicked.connect(self.Play)
+
+    def Play(self, btnPlay):
+
+        for i in range (tier):
+          shot = rnd.randint(0, 6)
+        
+          if lootBox[shot] == 1:
+            profit += 500000
+            print("Felicidades! Ganaste el premio mayor(oro)")
+            print("Se han añadido $500000")
+            print("Tu saldo actual es de: ${}".format(profit))
+          elif lootBox[shot] == 2:
+            profit += 300000
+            print("Ganaste el premio de plata")
+            print("Se han añadido $300000")
+            print("Tu saldo actual es de: ${}".format(profit))
+          elif lootBox[shot] == 3:
+            print("Ganaste el premio de bronce")
+            print("Tu saldo actual es de: ${}".format(profit))
+
+
+
