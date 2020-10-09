@@ -1028,6 +1028,37 @@
       </property>
      </widget>
     </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_11">
+        <property name="font">
+         <font>
+          <pointsize>24</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Resultado:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ResultadoLabel">
+        <property name="font">
+         <font>
+          <pointsize>23</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
    </layout>
   </widget>
   <widget class="QWidget" name="horizontalLayoutWidget">
@@ -1069,30 +1100,11 @@
     </item>
    </layout>
   </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>520</x>
-     <y>150</y>
-     <width>161</width>
-     <height>181</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>Coins.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>330</y>
+     <y>340</y>
      <width>251</width>
      <height>211</height>
     </rect>
@@ -1528,35 +1540,35 @@
      <item>
       <widget class="QLabel" name="label_7">
        <property name="text">
-        <string>Modalidad 1:             1 - 5</string>
+        <string>Modalidad 1:             10000 - 20000</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_8">
        <property name="text">
-        <string>Modalidad 2:           10 - 35</string>
+        <string>Modalidad 2:           20000 - 30000</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_9">
        <property name="text">
-        <string>Modalidad 3:           40 - 60</string>
+        <string>Modalidad 3:           30000 - 40000</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_10">
        <property name="text">
-        <string>Modalidad 4:          50 - 75</string>
+        <string>Modalidad 4:          40000 - 50000</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLabel" name="label_6">
        <property name="text">
-        <string>Modalidad 5:         70 o más</string>
+        <string>Modalidad 5:         50000 o más</string>
        </property>
       </widget>
      </item>
@@ -1576,14 +1588,110 @@
     <string>PushButton</string>
    </property>
   </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>210</y>
+     <width>321</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="SaldoLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>311</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Saldo</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>160</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>21</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Tu Saldo</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>439</x>
+     <y>280</y>
+     <width>321</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_12">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Tus Ganancias:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="GananciaLabel">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <zorder>frame</zorder>
   <zorder>label</zorder>
   <zorder>line</zorder>
   <zorder>verticalLayoutWidget</zorder>
   <zorder>horizontalLayoutWidget</zorder>
-  <zorder>label_5</zorder>
   <zorder>groupBox</zorder>
   <zorder>pushButton</zorder>
+  <zorder>frame_2</zorder>
+  <zorder>label_5</zorder>
+  <zorder>horizontalLayoutWidget_2</zorder>
  </widget>
  <resources/>
  <connections/>

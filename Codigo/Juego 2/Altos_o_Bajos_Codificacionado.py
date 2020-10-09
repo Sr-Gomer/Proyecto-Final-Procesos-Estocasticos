@@ -18,8 +18,8 @@ import numpy.random as rnd
 
 class MainWindow(QtWidgets.QDialog, Ui_Dialog):
     
-    dineroBase = 1000
-    def __init__(self, *args, **kwargs):
+    dineroBase = bd.traerValor() #Con esto se van a hacer las operaciones del saldo
+    def __init__(self, *args, **kwargs): #Al iniciar la ventana
         QtWidgets.QMainWindow.__init__(self, *args, **kwargs)
         self.setupUi(self)
         self.pushButton.setText("Jugar")
@@ -28,7 +28,7 @@ class MainWindow(QtWidgets.QDialog, Ui_Dialog):
         self.pushButton.clicked.connect(self.EscogerModalidad)
         self.SaldoLabel.setText(str(self.dineroBase))
 
-    def EscogerModalidad(self):
+    def EscogerModalidad(self): #Revisa la lista de moalidades al presionar el botón
         modalidad = self.Modalidad.currentIndex() 
         if modalidad==0:
             self.Modalidad_1()
@@ -41,10 +41,10 @@ class MainWindow(QtWidgets.QDialog, Ui_Dialog):
         elif modalidad==4:
             self.Modalidad_5()
     
-    def Modalidad_1(self):
-        dinero = int(self.Apuesta.text())
+    def Modalidad_1(self): #Todas las modalidades tienen la misma estructura que esta
+        dinero = float(self.Apuesta.text()) #Valor de la apuesta insertado por el usuario
         
-        if dinero < 1 or dinero > 5:
+        if dinero < 10000 or dinero > 20000 or dinero>bd.traerValor(): #Limite de apuesta por modalidad
             dineroCambio = self.dineroBase
             self.Apuesta.setText("Inserte una apuesta Valida")
             return dineroCambio
@@ -55,7 +55,7 @@ class MainWindow(QtWidgets.QDialog, Ui_Dialog):
             elif self.Bajos.isChecked():
                 apuesta = 0
                 
-            v=rnd.randint(1,101,1)
+            v=rnd.randint(1,101,1) #Número aleatorio para verificar si el núero que salió es alto o bajo
             if apuesta == 0:# bajos
                 
                 if v <= 50:
@@ -79,13 +79,15 @@ class MainWindow(QtWidgets.QDialog, Ui_Dialog):
                     dineroCambio=self.dineroBase+(dg-dinero)
                     self.label.setText("Perdiste")
                     
+        self.ResultadoLabel.setText(str(v)) #Actualziar los datos en la interface
         self.SaldoLabel.setText(str(dineroCambio))
-        self.ActualizarDinero(dineroCambio)
+        self.GananciaLabel.setText(str(dg-dinero))
+        self.ActualizarDinero(dineroCambio,(dg-dinero))
         
     def Modalidad_2(self):
-        dinero = int(self.Apuesta.text())
+        dinero = float(self.Apuesta.text())
         
-        if dinero < 10 or dinero > 35:
+        if dinero < 20000 or dinero > 30000 or dinero>bd.traerValor():
             dineroCambio = self.dineroBase
             self.Apuesta.setText("Inserte una apuesta Valida")
             return dineroCambio
@@ -120,13 +122,15 @@ class MainWindow(QtWidgets.QDialog, Ui_Dialog):
                     dineroCambio=self.dineroBase+(dg-dinero)
                     self.label.setText("Perdiste")
                     
+        self.ResultadoLabel.setText(str(v))
         self.SaldoLabel.setText(str(dineroCambio))
-        self.ActualizarDinero(dineroCambio)
+        self.GananciaLabel.setText(str(dg-dinero))
+        self.ActualizarDinero(dineroCambio,(dg-dinero))
     
     def Modalidad_3(self):
-        dinero = int(self.Apuesta.text())
+        dinero = float(self.Apuesta.text())
         
-        if dinero < 40 or dinero > 60:
+        if dinero < 30000 or dinero > 40000 or dinero>bd.traerValor():
             dineroCambio = self.dineroBase
             self.Apuesta.setText("Inserte una apuesta Valida")
             return dineroCambio
@@ -161,13 +165,15 @@ class MainWindow(QtWidgets.QDialog, Ui_Dialog):
                     dineroCambio=self.dineroBase+(dg-dinero)
                     self.label.setText("Perdiste")
                     
+        self.ResultadoLabel.setText(str(v))
         self.SaldoLabel.setText(str(dineroCambio))
-        self.ActualizarDinero(dineroCambio)
+        self.GananciaLabel.setText(str(dg-dinero))
+        self.ActualizarDinero(dineroCambio,(dg-dinero))
     
     def Modalidad_4(self):
-        dinero = int(self.Apuesta.text())
+        dinero = float(self.Apuesta.text())
         
-        if dinero < 50 or dinero > 70:
+        if dinero < 40000 or dinero > 50000 or dinero>bd.traerValor():
             dineroCambio = self.dineroBase
             self.Apuesta.setText("Inserte una apuesta Valida")
             return dineroCambio
@@ -201,14 +207,16 @@ class MainWindow(QtWidgets.QDialog, Ui_Dialog):
                     #dineroCambio=(dg-dinero)
                     dineroCambio=self.dineroBase+(dg-dinero)
                     self.label.setText("Perdiste")
-                    
+        
+        self.ResultadoLabel.setText(str(v))            
         self.SaldoLabel.setText(str(dineroCambio))
-        self.ActualizarDinero(dineroCambio)
+        self.GananciaLabel.setText(str(dg-dinero))
+        self.ActualizarDinero(dineroCambio,(dg-dinero))
     
     def Modalidad_5(self):
-        dinero = int(self.Apuesta.text())
+        dinero = float(self.Apuesta.text())
         
-        if dinero < 70:
+        if dinero < 50000 or dinero>bd.traerValor():
             dineroCambio = self.dineroBase
             self.Apuesta.setText("Inserte una apuesta Valida")
             return dineroCambio
@@ -243,14 +251,19 @@ class MainWindow(QtWidgets.QDialog, Ui_Dialog):
                     dineroCambio=self.dineroBase+(dg-dinero)
                     self.label.setText("Perdiste")
                     
+        self.ResultadoLabel.setText(str(v))
         self.SaldoLabel.setText(str(dineroCambio))
-        self.ActualizarDinero(dineroCambio)
+        self.GananciaLabel.setText(str(dg-dinero))
+        self.ActualizarDinero(dineroCambio,(dg-dinero))
         
-    def ActualizarDinero(self,dineroNuevo):
+    def ActualizarDinero(self,dineroNuevo,cambioDinero):
         if (dineroNuevo<0):
-            dineroBase = 0
+            self.dineroBase = 0
+            self.SaldoLabel.setText(str(self.dineroBase))
+            bd.insertarDatos(self.dineroBase,cambioDinero)
         else:
             self.dineroBase = dineroNuevo
+            bd.insertarDatos(self.dineroBase,cambioDinero)
         
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])
