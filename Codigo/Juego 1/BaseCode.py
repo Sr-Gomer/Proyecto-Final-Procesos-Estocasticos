@@ -24,20 +24,23 @@ class RuletaClass:
    def getSaldo(self):
       return self.Saldo
    def Lanzar(self,index,value,plata):
-      self.PlataJugar = plata
-      if index == 0:
+     if plata >= 10000: 
+       self.PlataJugar = plata
+     else:
+        plata = 10000
+     if index == 0:
          self.Modo1(value)
-      if index == 1:
+     if index == 1:
          self.Modo2(value)
-      if index == 2:
+     if index == 2:
          self.Modo3()
-      if index == 3:
+     if index == 3:
          self. Modo4()
-      if index == 4:
+     if index == 4:
          self.Modo5(value)
-      self.Saldo += self.transaccion
-      bd.insertarDatos(self.Saldo,self.transaccion)
-      self.ActualizarSaldo()
+     self.Saldo += self.transaccion
+     bd.insertarDatos(self.Saldo,self.transaccion)
+     self.ActualizarSaldo()
         
    def Modo1(self,value): #apuesta numero
       self.numero = rnd.randint(0,37,1) #generador de la bola
