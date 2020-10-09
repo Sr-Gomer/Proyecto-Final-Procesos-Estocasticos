@@ -2,14 +2,11 @@
 
 import sys,re
 import numpy as np
-
-sys.path.append("..") #Necesario para poder importar basedatos
-import bd #Importa el script bd.py
-
 from PyQt5 import uic, QtWidgets, QtGui
 from PyQt5.QtWidgets import QMessageBox
-from Tragaperras import JuegoTragaperras
-uiFile = "./SuperTragaperrasUltimateEdition.ui" # Nombre del archivo aquí. Debe estar en la misma carpeta
+from Juego4.Tragaperras import JuegoTragaperras
+
+uiFile = "./Juego4/SuperTragaperrasUltimateEdition.ui" # Nombre del archivo aquí. Debe estar en la misma carpeta
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(uiFile)
 
@@ -41,10 +38,13 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
 
 def Run():
-    app =  QtWidgets.QApplication(sys.argv)
+    if __name__ == "__main__":
+        app =  QtWidgets.QApplication(sys.argv)
     window = UIWindow()
     window.show()
-    sys.exit(app.exec_())
+    if __name__ == "__main__":
+        sys.exit(app.exec_())
     
 
-Run()#Descomentar esta linea cuando se quiera probar individualmente.
+# Run()#Descomentar esta linea cuando se quiera probar individualmente.
+print("Done importing")

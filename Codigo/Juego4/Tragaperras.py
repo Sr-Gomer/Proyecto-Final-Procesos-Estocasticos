@@ -7,9 +7,7 @@ Created on Fri Oct  2 17:40:35 2020
 
 import numpy as np
 import numpy.random as rnd
-
 import sys
-sys.path.append("..")
 import bd
 
 #from archivo import JuegoTragaperras
@@ -78,8 +76,3 @@ class JuegoTragaperras:
         bd.insertarDatos(self.saldo, self.dinGanado - self.cuota)
     def hahaprintxd(self):
         print("SIMEDISCULPANPROCEDOAXDDDDDD")
-
-# Juego = JuegoTragaperras()
-# Juego.Apostar(5, 3)
-# print(Juego.dinGanado)
-# print(Juego.saldo)

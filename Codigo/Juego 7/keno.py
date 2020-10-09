@@ -24,15 +24,19 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+        self.label2_5.setText("%s"%traerValor())
         self.btnjugar.clicked.connect(self.jugarui)
-        self.label2_5.setText(traerValor())
+        
         
         
             
     def jugarui(self):
         t = self.lineEdit2.text()
         m = self.comboBox.currentIndex()
+        k = float(self.label2_5.text())
         j = True
+        
+        
         if((m == 0 and len(t)<3) or (m == 1 and len(t)<9 and len(t)>4) or (m == 2 and len(t)<15 and len(t)>8) or (m == 3 and len(t)<24 and len(t)>14) or (m == 4 and len(t)<30 and len(t)>18)):
             j = True
             self.label2_4.setText("     ¡Formato Correcto!")
@@ -41,9 +45,15 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             self.label2_4.setText("     ¡Formato Invalido!")
             self.label2_4.setStyleSheet("color: rgb(255, 0, 4);")
             j= False
-        if(int(self.lineEdit.text()) < 10000):
+        if(float(self.lineEdit.text()) < 10000):
             self.label4.setText("Mínimo 10.000")
             j = False
+            
+        if(k < float(self.lineEdit.text())):
+            self.label4.setText("¡Sin Saldo!")
+            self.label4.setStyleSheet("color: rgb(255, 0, 4);")
+            j = False
+            
         if j == True:
             texto = jugar(self.comboBox.currentIndex(),self.lineEdit2.text(),self.lineEdit.text())
             ver = "$"
@@ -55,11 +65,13 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
               self.label4.setStyleSheet("color: rgb(255, 0, 4);")
               ver += str(texto)*2
               self.label2_3.setText(ver)
-              insertarDatos(float(self.label2_5.text())-float(self.lineEdit.text()),float(self.lineEdit.text()))
+              insertarDatos(float(self.label2_5.text())-float(self.lineEdit.text()),-1*float(self.lineEdit.text()))
+              self.label2_5.setText("%s"%traerValor())
             else:
               self.label4.setText("    ¡Ganaste!")
               self.label4.setStyleSheet("color: rgb(226, 240, 57);")
               insertarDatos(float(self.label2_5.text())+texto,float(self.lineEdit.text()))
+              self.label2_5.setText("%s"%traerValor())
          
         
 def jugar(Mod,Balotas, Valor):
