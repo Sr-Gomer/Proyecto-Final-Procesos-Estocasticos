@@ -5,8 +5,8 @@ from PyQt5 import uic, QtWidgets, QtGui
 
 from PyQt5.QtWidgets import QMessageBox
 
-from Modalidades_Caps import Craps
-uiFile = "./UI_Caps.ui" # Nombre del archivo aquí. Debe estar en la misma carpeta
+from Juego5.Modalidades_Caps import Craps
+uiFile = "./" + __package__ + "./UI_Caps.ui" # Nombre del archivo aquí. Debe estar en la misma carpeta
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(uiFile)
 
@@ -65,4 +65,4 @@ def Run():
     sys.exit(app.exec_())
     
 
-Run()#Descomentar esta linea cuando se quiera probar individualmente.
+# Run()#Descomentar esta linea cuando se quiera probar individualmente.
