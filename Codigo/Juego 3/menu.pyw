@@ -3,8 +3,12 @@ from PyQt5 import uic, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtSql import QSqlDatabase,QSqlQuery, QSqlTableModel
 import ctypes
-qtCreatorFile = "lootbox.ui" # Nombre del archivo aquí.
+from bd import *
+from Funciones import *
+import numpy as np
+import numpy.random as rnd
 
+qtCreatorFile = "Lootbox.ui" # Nombre del archivo qt aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -12,23 +16,30 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-        #self.showMaximized()
+        
+        dinero=float(traerValor())
+        self.saldoTotal.setText(str(dinero))
 
-    #def showEvent(self,event):
+        self.btnPlay.clicked.connect(self.Verify)
 
+    def Verify(self):
+        
+        
+        if(self.rbtnTier1.isChecked() == True):
+            tier = 1
+        if(self.rbtnTier2.isChecked() == True):
+            tier = 2
+        if(self.rbtnTier3.isChecked() == True):
+            tier = 3
+        if(self.rbtnTier4.isChecked() == True):
+            tier = 4
+        if(self.rbtnTier5.isChecked() == True):
+            tier = 5
+           
+        Play(tier)
 
-    # def validar_ganancia(self):
-    #     entradaganancia=self.entradaganancia.text()
-    #     validar=re.match('0-9-[.]',entradaganancia,re.I)
-
-    # def validar_perdida(self):
-    #     validar=re.match('0-9-[.]',entradaperdida,re.I)
-    #     entradaperdida=self.entradaperdida.text()
-
-def Run(): 
+if __name__ == "__main__":
     app =  QtWidgets.QApplication(sys.argv)
     window = MyApp()
     window.show()
     sys.exit(app.exec_())
-
-Run()

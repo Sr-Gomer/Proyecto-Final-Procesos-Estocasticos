@@ -414,7 +414,11 @@ background-color: rgba(255, 255, 255, 0);</string>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QLCDNumber" name="_resultadoDado1"/>
+        <widget class="QLCDNumber" name="_resultadoDado1">
+         <property name="intValue" stdset="0">
+          <number>15</number>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QLCDNumber" name="_resultadoDado2"/>
