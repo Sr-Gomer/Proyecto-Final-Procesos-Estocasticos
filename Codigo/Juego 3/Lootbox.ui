@@ -73,21 +73,21 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_4">
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="btnPlay_2">
       <property name="text">
        <string>Jugar</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="btnExit">
       <property name="text">
        <string>Salir</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="btnInstructions">
       <property name="text">
        <string>Instrucciones</string>
       </property>
@@ -109,35 +109,35 @@
      <number>56</number>
     </property>
     <item>
-     <widget class="QRadioButton" name="radioButton">
+     <widget class="QRadioButton" name="rbtnTier1">
       <property name="text">
        <string>Tier 1</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioButton_2">
+     <widget class="QRadioButton" name="rbtnTier2">
       <property name="text">
        <string>Tier 2</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioButton_3">
+     <widget class="QRadioButton" name="rbtnTier3">
       <property name="text">
        <string>Tier 3</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioButton_4">
+     <widget class="QRadioButton" name="rbtnTier4">
       <property name="text">
        <string>Tier 4</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QRadioButton" name="radioButton_5">
+     <widget class="QRadioButton" name="rbtnTier5">
       <property name="text">
        <string>Tier 5</string>
       </property>
