@@ -24,28 +24,28 @@
       <x>40</x>
       <y>130</y>
       <width>383</width>
-      <height>343</height>
+      <height>347</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <property name="leftMargin">
       <number>0</number>
      </property>
-     <item row="5" column="3">
-      <widget class="QPushButton" name="Juego8">
+     <item row="0" column="2">
+      <widget class="QPushButton" name="Juego1">
        <property name="contextMenuPolicy">
         <enum>Qt::CustomContextMenu</enum>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton#Juego8{
+        <string notr="true">QPushButton#Juego1{
 selection-color: rgb(100, 255, 76);
 font: 36pt &quot;Gloucester MT Extra Condensed&quot;;
 
 color:rgb(235,235,235);
  background: rgb(155,155,155);
 }
-QPushButton#Juego8:hover{
-background-color:rgb(156, 141, 255);
+QPushButton#Juego1:hover{
+background-color:rgb(86, 71, 255);
  padding-top: 5px;
 }
 
@@ -55,7 +55,7 @@ background-color:rgb(156, 141, 255);
 </string>
        </property>
        <property name="text">
-        <string>Juego8</string>
+        <string>Juego1</string>
        </property>
        <property name="checkable">
         <bool>false</bool>
@@ -92,37 +92,6 @@ background-color:rgb(146, 131, 255);
        </property>
       </widget>
      </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="Juego1">
-       <property name="contextMenuPolicy">
-        <enum>Qt::CustomContextMenu</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton#Juego1{
-selection-color: rgb(100, 255, 76);
-font: 36pt &quot;Gloucester MT Extra Condensed&quot;;
-
-color:rgb(235,235,235);
- background: rgb(155,155,155);
-}
-QPushButton#Juego1:hover{
-background-color:rgb(86, 71, 255);
- padding-top: 5px;
-}
-
-
-
-
-</string>
-       </property>
-       <property name="text">
-        <string>Juego1</string>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="3">
       <widget class="QPushButton" name="Juego2">
        <property name="contextMenuPolicy">
@@ -147,6 +116,68 @@ background-color:rgb(96, 81, 255);
        </property>
        <property name="text">
         <string>Juego2</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="3">
+      <widget class="QPushButton" name="Juego8">
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#Juego8{
+selection-color: rgb(100, 255, 76);
+font: 36pt &quot;Gloucester MT Extra Condensed&quot;;
+
+color:rgb(235,235,235);
+ background: rgb(155,155,155);
+}
+QPushButton#Juego8:hover{
+background-color:rgb(156, 141, 255);
+ padding-top: 5px;
+}
+
+
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>Juego8</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QPushButton" name="Juego5">
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton#Juego5{
+selection-color: rgb(100, 255, 76);
+font: 36pt &quot;Gloucester MT Extra Condensed&quot;;
+
+color:rgb(235,235,235);
+ background: rgb(155,155,155);
+}
+QPushButton#Juego5:hover{
+background-color:rgb(126, 111, 255);
+ padding-top: 5px;
+}
+
+
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>Juego5</string>
        </property>
        <property name="checkable">
         <bool>false</bool>
@@ -246,37 +277,6 @@ background-color:rgb(106, 91, 255);
        </property>
       </widget>
      </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="Juego5">
-       <property name="contextMenuPolicy">
-        <enum>Qt::CustomContextMenu</enum>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton#Juego5{
-selection-color: rgb(100, 255, 76);
-font: 36pt &quot;Gloucester MT Extra Condensed&quot;;
-
-color:rgb(235,235,235);
- background: rgb(155,155,155);
-}
-QPushButton#Juego5:hover{
-background-color:rgb(126, 111, 255);
- padding-top: 5px;
-}
-
-
-
-
-</string>
-       </property>
-       <property name="text">
-        <string>Juego5</string>
-       </property>
-       <property name="checkable">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
    <widget class="QLabel" name="label">
@@ -341,6 +341,40 @@ background-color:rgb(146, 131, 255);
     </property>
     <property name="text">
      <string>Recargar</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>180</y>
+      <width>341</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="_graphlayout"/>
+   </widget>
+   <widget class="QGraphicsView" name="_qgraph">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>550</y>
+      <width>339</width>
+      <height>259</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="_tstpush">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>130</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
     </property>
    </widget>
   </widget>

@@ -22,8 +22,8 @@
   <widget class="QPushButton" name="btnjugar">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>440</y>
+     <x>270</x>
+     <y>430</y>
      <width>131</width>
      <height>41</height>
     </rect>
@@ -115,7 +115,7 @@
     <rect>
      <x>320</x>
      <y>140</y>
-     <width>321</width>
+     <width>519</width>
      <height>124</height>
     </rect>
    </property>
@@ -131,7 +131,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Escoger Balotas</string>
+       <string>Escoger Balotas(1,80)</string>
       </property>
      </widget>
     </item>
@@ -153,7 +153,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Separa Las Balotas con &quot;,&quot; </string>
+       <string>Separa Las Balotas con &quot;,&quot;</string>
       </property>
      </widget>
     </item>
