@@ -19,24 +19,31 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         
         dinero=float(traerValor())
         self.saldoTotal.setText(str(dinero))
+        print(dinero)
 
         self.btnPlay.clicked.connect(self.Verify)
 
-    def Verify(self):
-        
-        
+    def Verify(self):        
         if(self.rbtnTier1.isChecked() == True):
             tier = 1
+            costo = 100000
         if(self.rbtnTier2.isChecked() == True):
             tier = 2
+            costo = 150000
         if(self.rbtnTier3.isChecked() == True):
             tier = 3
+            costo = 250000
         if(self.rbtnTier4.isChecked() == True):
             tier = 4
+            costo = 350000
         if(self.rbtnTier5.isChecked() == True):
             tier = 5
+            costo = 450000
            
-        Play(tier)
+        if(dinero >= costo):
+            Play(tier, costo, dinero)
+        else:
+            self.recharge.setText("Recarga tu saldo!")
 
 if __name__ == "__main__":
     app =  QtWidgets.QApplication(sys.argv)

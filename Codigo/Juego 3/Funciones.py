@@ -7,13 +7,13 @@ from bd import *
 import numpy as np
 import numpy.random as rnd
 
-def Play(tier):
+def Play(tier, costo, dinero):
         print(tier)
         
         lootBox = np.array([1, 2, 2, 3, 3, 3])
         profit = 0
     
-        saldo = traerValor()
+        #saldo = traerValor()
 
         for i in range (tier):
           shot = rnd.randint(0, 6)
