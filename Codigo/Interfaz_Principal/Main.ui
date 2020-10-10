@@ -317,6 +317,32 @@ color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(216, 181,
      <string>Plot</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="_recargar">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>30</y>
+      <width>161</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#_recargar{
+selection-color: rgb(100, 255, 76);
+font: 36pt &quot;Gloucester MT Extra Condensed&quot;;
+
+color:rgb(235,235,235);
+ background: rgb(155,155,155);
+}
+QPushButton#_recargar:hover{
+background-color:rgb(146, 131, 255);
+ padding-top: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Recargar</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
