@@ -6,7 +6,7 @@ from PyQt5.QtSql import QSqlDatabase,QSqlQuery, QSqlTableModel
 
 
 db = QSqlDatabase.addDatabase('QMYSQL')#driver de la base de datos en este caso mysql tambien funciona para mariadb
-db.setHostName("186.147.72.83")#servidor de conexion de la base de datos, por defecto el puerto es 3306
+db.setHostName("192.168.100.243")#servidor de conexion de la base de datos, por defecto el puerto es 3306
 db.setDatabaseName("casino")#nombre de la base de datos
 db.setUserName("usuariocasino")#usuario para conectarse a la base de datos
 db.setPassword("casino")#contraseña del usuario para la base de datos
