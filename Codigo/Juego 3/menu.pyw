@@ -6,7 +6,7 @@ from PyQt5.QtCore import QSize
 from PyQt5.QtGui import QImage, QPalette, QBrush
 import ctypes
 from bd import *
-from Funciones import *
+#from Funciones import *
 import numpy as np
 import numpy.random as rnd
 
@@ -21,51 +21,51 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         dinero=float(traerValor())
         self.saldoTotal.setText(str(dinero))
-
-        print("init {}".format(dinero))
+        #print("init {}".format(dinero))
+        
         self.btnPlay.clicked.connect(self.Verify)
 
     def Verify(self):
         dinero=float(traerValor())
-        print("verify {}".format(dinero))
+        #print("verify {}".format(dinero))
+        
         if(self.rbtnTier1.isChecked() == True):
             tier = 1
-            costo = 100000
+            costo = 30
             if(dinero >= costo):
-
                 self.Play(tier, costo, dinero)
                 #self.informacion.setText()
             else:
                 self.informacion.setText("Recarga tu saldo!")
+                
         elif(self.rbtnTier2.isChecked() == True):
             tier = 2
-            costo = 150000
+            costo = 70
             if(dinero >= costo):
-
                 self.Play(tier, costo, dinero)
             else:
                 self.informacion.setText("Recarga tu saldo!")
+                
         elif(self.rbtnTier3.isChecked() == True):
             tier = 3
             costo = 250000
             if(dinero >= costo):
-
                 self.Play(tier, costo, dinero)
             else:
                 self.informacion.setText("Recarga tu saldo!")
+                
         elif(self.rbtnTier4.isChecked() == True):
             tier = 4
             costo = 350000
             if(dinero >= costo):
-
                 self.Play(tier, costo, dinero)
             else:
                 self.informacion.setText("Recarga tu saldo!")
+                
         elif(self.rbtnTier5.isChecked() == True):
             tier = 5
             costo = 450000
             if(dinero >= costo):
-
                 self.Play(tier, costo, dinero)
             else:
                 self.informacion.setText("Recarga tu saldo!")
@@ -75,36 +75,54 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
         # print("soy la funcion",dinero)
         # print("soy la funcion",costo)
         dinero -= costo
+        print("dinero - costo {}".format(dinero))
+        
         lootBox = np.array([1, 2, 2, 3, 3, 3])
-        # print("loot",lootBox.size)
+        ganancia = 0
+        print("loot",lootBox.size)
         #saldo = traerValor()
-        CAoro = float(1 / (1 / lootBox.size))
-        # print("size {}".format(lootBox.size))
-        CAplata = float(1 / (2 / lootBox.size))
+        
+        CAoro = 1 / (1 / lootBox.size)
+        CAplata = 1 / (2 / lootBox.size)
 
         profitOro = costo * CAoro
+        print("profitoro {}".format(profitOro))
         profitPlata = costo * CAplata
+        print("profitplata {}".format(profitPlata))
 
         for i in range (tier):
           shot = rnd.randint(0, 6)
+          print(lootBox[shot])
 
           if lootBox[shot] == 1:
-            dinero += profitOro
+            ganancia += profitOro
+            print("ganancia {}".format(ganancia))
+            #dinero += profitOro
+            print("dinero + profit {}".format(dinero))
             triunfo = "Ganaste el premio de oro!"
-            print(dinero)
-            print("Se han añadido $500000")
+            print("Ganaste el premio de oro")
 
           elif lootBox[shot] == 2:
-            dinero += profitPlata
+            ganancia += profitPlata
+            print("ganancia {}".format(ganancia))
+            #dinero += profitPlata
             triunfo = "Ganaste el premio de plata!"
-            print(dinero)
+            print("dinero + profit {}".format(dinero))
             print("Ganaste el premio de plata")
-            print("Se han añadido $300000")
+
           elif lootBox[shot] == 3:
-            dinero += 0
+            #dinero += 0
             triunfo = "Ganaste el premio de bronce!"
-            print(dinero)
+            print("dinero + profit {}".format(dinero))
             print("Ganaste el premio de bronce")
+            
+        #totalGanancias = 
+        #1 2 2 1 3 === oros*2 + 0 + platas*2
+        self.ganancia.setText(str(ganancia))
+            
+        dinero=float(traerValor())
+        self.saldoTotal.setText(str(dinero))
+        print("init {}".format(dinero))
 
 
 if __name__ == "__main__":

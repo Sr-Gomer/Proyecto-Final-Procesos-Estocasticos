@@ -199,7 +199,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Número</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -424,11 +424,16 @@ p, li { white-space: pre-wrap; }
   <widget class="QLabel" name="informacion">
    <property name="geometry">
     <rect>
-     <x>870</x>
+     <x>800</x>
      <y>610</y>
-     <width>221</width>
+     <width>271</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
    </property>
    <property name="text">
     <string/>
