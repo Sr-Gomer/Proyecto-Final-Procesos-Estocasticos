@@ -30,10 +30,17 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btnjugar.clicked.connect(self.jugarui)
         self.img = QtGui.QPixmap(imgKeno) # carga la imagen
         self._img.setPixmap(self.img) #Le pone la imagen al label
+        print("este es el print")
+        print(self.lineEdit2.text())
         
         
             
     def jugarui(self):
+        if(self.isInputANumber() == True and self.HasBalota() == True):
+            pass
+        else:
+            return
+
         t = self.lineEdit2.text()
         m = self.comboBox.currentIndex()
         k = float(self.label2_5.text())
@@ -68,13 +75,30 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
               self.label4.setStyleSheet("color: rgb(255, 0, 4);")
               ver += str(texto)*2
               self.label2_3.setText(ver)
-              bd.InsertarDatos(float(self.label2_5.text())-float(self.lineEdit.text()),-1*float(self.lineEdit.text()))
+              bd.insertarDatos(float(self.label2_5.text())-float(self.lineEdit.text()),-1*float(self.lineEdit.text()))
               self.label2_5.setText("%s"%bd.traerValor())
             else:
               self.label4.setText("    ¡Ganaste!")
               self.label4.setStyleSheet("color: rgb(226, 240, 57);")
-              bd.InsertarDatos(float(self.label2_5.text())+texto,float(self.lineEdit.text()))
+              bd.insertarDatos(float(self.label2_5.text())+texto,float(self.lineEdit.text()))
               self.label2_5.setText("%s"%bd.traerValor())
+    def isInputANumber(self):#Checa si el input es un número
+        self.toReturn : bool
+        try:
+            float(self.lineEdit.text())
+            self.toReturn = True
+        except:
+            QMessageBox.about(self, "Error", "Por favor ingrese un valor valido")
+            self.toReturn = False
+        return self.toReturn
+    def HasBalota(self):
+        if(self.lineEdit2.text() != ""):
+            return True
+        else:
+            QMessageBox.about(self, "Error", "Por favor ingrese un balota valida")
+            return False
+    
+            
          
         
 def jugar(Mod,Balotas, Valor):
