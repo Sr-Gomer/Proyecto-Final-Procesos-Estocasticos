@@ -4,10 +4,10 @@ import sys,re
 from PyQt5 import uic, QtWidgets, QtGui
 
 from PyQt5.QtWidgets import QMessageBox
-from BaseCode import RuletaClass 
+from Juego1.BaseCode import RuletaClass 
 
-uiFile = "./ruletaui.ui" # Nombre del archivo aquí. Debe estar en la misma carpeta
-ruedaImage = "./imagenejemplo.png"
+uiFile = "./" +__package__+ "./ruletaui.ui" # Nombre del archivo aquí. Debe estar en la misma carpeta
+ruedaImage ="./"+__package__+ "./imagenejemplo.png"
 Ui_MainWindow, QtBaseClass = uic.loadUiType(uiFile)
 
 
@@ -79,4 +79,4 @@ def Run():
     sys.exit(app.exec_())
     
 
-Run()#Descomentar esta linea cuando se quiera probar individualmente.
+# Run()#Descomentar esta linea cuando se quiera probar individualmente.

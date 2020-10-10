@@ -5,11 +5,12 @@ Spyder Editor
 This is a temporary script file.
 """
 import sys
-sys.path.append("..") #Necesario para poder importar basedatos
+if __name__ == "__main__":
+   sys.path.append("..") #Necesario para poder importar basedatos
 import bd #Importa el script bd.py
 import numpy as np
 import numpy.random as rnd
-import bd
+
 
 class RuletaClass:
    def __init__(self,msgBox):

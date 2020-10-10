@@ -7,15 +7,16 @@ Created on Tue Oct  6 16:56:43 2020
 
 import sys,re 
 
-sys.path.append("..")
+if __name__ == "__main__":
+    sys.path.append("..")
 
 
 import bd
 
-from AltosBajos import *
+from Juego2.AltosBajos import *
 import numpy as np
 import numpy.random as rnd
-
+from PyQt5 import QtCore, QtGui, QtWidgets
 class MainWindow(QtWidgets.QDialog, Ui_Dialog):
     
     dineroBase = bd.traerValor() #Con esto se van a hacer las operaciones del saldo

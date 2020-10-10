@@ -6,10 +6,10 @@ from PIL import Image
 qtCreatorFile = "./Interfaz_Principal/Main.ui" # Nombre del archivo aquí.
 plotImg = './Interfaz_Principal/Captura.jpg'
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
-
+from Juego1 import Ruleta
+from Juego2 import Altos_o_Bajos_Codificacionado
 from Juego4 import SuperTragaPerras
 from Juego5 import CapsUI
-
 
 
 
@@ -23,8 +23,18 @@ class MainW(QtWidgets.QMainWindow, Ui_MainWindow):
         self.imagen.setText("aaaaaaa")
         myimg = QtGui.QPixmap(plotImg)
         self.imagen.setPixmap(myimg)
+        self.Juego1.clicked.connect(self.runjuego1)
+        self.Juego2.clicked.connect(self.runjuego2)
         self.Juego4.clicked.connect(self.runjuego4)
         self.Juego5.clicked.connect(self.runjuego5)
+    
+
+    def runjuego1(self):
+        self.window = Ruleta.UIWindow()
+        self.window.show()
+    def runjuego2(self):
+        self.window = Altos_o_Bajos_Codificacionado.MainWindow()
+        self.window.show()
     def runjuego4(self):
         self.window = SuperTragaPerras.UIWindow()
         self.window.show()
