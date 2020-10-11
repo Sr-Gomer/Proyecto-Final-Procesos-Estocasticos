@@ -184,7 +184,7 @@
     <string>Ganancia total:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="ganancia">
+  <widget class="QLabel" name="_txtg">
    <property name="geometry">
     <rect>
      <x>690</x>
@@ -199,7 +199,7 @@
     </font>
    </property>
    <property name="text">
-    <string/>
+    <string>--</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_5">
@@ -402,7 +402,7 @@ p, li { white-space: pre-wrap; }
     <string>Precio de los tiers:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="image">
+  <widget class="QLabel" name="_img">
    <property name="geometry">
     <rect>
      <x>730</x>

@@ -83,3 +83,15 @@ def reiniciar():
      recargar(0)
      db.close()
      print("tabla vacia")
+
+
+def getData():
+  estado=db.open()
+  query=QSqlQuery()
+  query.exec_("SELECT total_transaccion FROM  transacciones")
+  total = []
+  #  for i in range(0,query.size()):
+  while query.next():
+    total.append(query.value(0))
+  db.close()
+  return total

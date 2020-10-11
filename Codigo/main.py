@@ -8,6 +8,7 @@ plotImg = './Interfaz_Principal/Captura.jpg'
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 from Juego1 import Ruleta
 from Juego2 import Altos_o_Bajos_Codificacionado
+from Juego3 import LootBoxGame
 from Juego4 import SuperTragaPerras
 from Juego5 import CapsUI
 from Juego6 import casino
@@ -15,15 +16,12 @@ from Juego7 import keno
 from Juego8 import Jackpot
 from Recarga import menu
 
-
+import bd
 from PyQt5.QtChart import QChart, QChartView, QLineSeries
 from PyQt5.QtCore import QPointF
 from PyQt5.QtGui import QPainter
-from PyQt5.QtCore import Qt
-
-
-
-
+from PyQt5.QtCore import Qt,QThread, pyqtSignal
+from PyQt5 import QtCore, QtGui, QtWidgets
 class MainW(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
@@ -36,12 +34,15 @@ class MainW(QtWidgets.QMainWindow, Ui_MainWindow):
         self.imagen.setPixmap(myimg)
         self.Juego1.clicked.connect(self.runjuego1)
         self.Juego2.clicked.connect(self.runjuego2)
+        self.Juego3.clicked.connect(self.runjuego3)
         self.Juego4.clicked.connect(self.runjuego4)
         self.Juego5.clicked.connect(self.runjuego5)
         self.Juego6.clicked.connect(self.runjuego6)
         self.Juego7.clicked.connect(self.runjuego7)
         self.Juego8.clicked.connect(self.runjuego8)
-        # self.create_linechart()
+        self.setupgraph()
+        self.updatechart()
+        self._actualizar.clicked.connect(self.updatechart)
 
         self._recargar.clicked.connect(self.recargar)
     def runjuego1(self):
@@ -49,6 +50,9 @@ class MainW(QtWidgets.QMainWindow, Ui_MainWindow):
         self.window.show()
     def runjuego2(self):
         self.window = Altos_o_Bajos_Codificacionado.MainWindow()
+        self.window.show()
+    def runjuego3(self):
+        self.window = LootBoxGame.MyApp()
         self.window.show()
     def runjuego4(self):
         self.window = SuperTragaPerras.UIWindow()
@@ -69,35 +73,47 @@ class MainW(QtWidgets.QMainWindow, Ui_MainWindow):
         self.window = menu.MyApp()
         self.window.show()
 
-    # def create_linechart(self):
 
-    #     series = QLineSeries(self)
-    #     series.append(0,6)
-    #     series.append(2, 4)
-    #     series.append(3, 8)
-    #     series.append(7, 4)
-    #     series.append(10, 5)
+    def setupgraph(self):
+        self.chart =  QChart()
+        self.chart.createDefaultAxes()
+        self.chart.setAnimationOptions(QChart.SeriesAnimations)
+        self.chart.setTitle("Saldo vs Tiempo")
+        self.chart.legend().setVisible(True)
+        self.chart.legend().setAlignment(Qt.AlignBottom)
+        self.chartview = QChartView(self.chart)
+        self.chartview.setRenderHint(QPainter.Antialiasing)
+        self._graphlayout.addWidget(self.chartview)
+    def updatechart(self):
+        self.series = QLineSeries(self)
+        self.datos = bd.getData()
+        self.c = 0
+        for x in self.datos:
+            self.series.append(self.c,x)
+            self.c+=1
+        self.chart.removeAllSeries()
+        self.chart.addSeries(self.series)
+        self.chart.createDefaultAxes()
 
-    #     series << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3) << QPointF(20, 2)
+    def create_linechart(self):
 
-
-    #     chart =  QChart()
-
-    #     chart.addSeries(series)
-    #     chart.createDefaultAxes()
-    #     chart.setAnimationOptions(QChart.SeriesAnimations)
-    #     chart.setTitle("Line Chart Example")
-
-    #     chart.legend().setVisible(True)
-    #     chart.legend().setAlignment(Qt.AlignBottom)
-
-
-    #     chartview = QChartView(chart)
-    #     chartview.setRenderHint(QPainter.Antialiasing)
-    #     self._graphlayout.addWidget(self._tstpush,0,0)
-    #     # self.setCentralWidget(chartview)
-
-if __name__ == "__main__": 
+        self.series = QLineSeries(self)
+        self.datos = bd.getData()
+        self.c = 0
+        for x in self.datos:
+            self.series.append(self.c,x)
+            self.c+=1
+        self.chart =  QChart()
+        self.chart.addSeries(self.series)
+        self.chart.createDefaultAxes()
+        self.chart.setAnimationOptions(QChart.SeriesAnimations)
+        self.chart.setTitle("Saldo vs Tiempo")
+        self.chart.legend().setVisible(True)
+        self.chart.legend().setAlignment(Qt.AlignBottom)
+        self.chartview = QChartView(self.chart)
+        self.chartview.setRenderHint(QPainter.Antialiasing)
+        self._graphlayout.addWidget(self.chartview)
+if __name__ == "__main__":
     app =  QtWidgets.QApplication(sys.argv)
     window = MainW()
     window.show()
