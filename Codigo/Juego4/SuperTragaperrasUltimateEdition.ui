@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>954</width>
+    <height>726</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>784</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="result">
+        <property name="styleSheet">
+         <string notr="true">font: 36pt &quot;Playbill&quot;;
+color: rgb(0, 81, 255);</string>
+        </property>
+        <property name="text">
+         <string>Resultado:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="_resultado">
+        <property name="styleSheet">
+         <string notr="true">font: 36pt &quot;Playbill&quot;;
+color: rgb(255, 179, 2);</string>
+        </property>
+        <property name="text">
+         <string>rslt</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="modalidad">
+        <property name="styleSheet">
+         <string notr="true">font: 30pt &quot;Playbill&quot;;
+color: rgb(0, 81, 255);</string>
+        </property>
+        <property name="text">
+         <string>Modalidad :</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="_modalidad">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 24pt &quot;Playbill&quot;;
+background-color: rgb(53, 0, 71);
+color: rgb(255, 183, 1);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>Número Especifico</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Cualquier Par</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Par en especifico</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Terna o trio</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Terna en especifico</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="Saldotext">
+        <property name="styleSheet">
+         <string notr="true">font: 36pt &quot;Playbill&quot;;
+color: rgb(0, 81, 255);</string>
+        </property>
+        <property name="text">
+         <string>Saldo:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="_saldo">
+        <property name="styleSheet">
+         <string notr="true">font: 36pt &quot;Playbill&quot;;
+color: rgb(255, 179, 2);</string>
+        </property>
+        <property name="text">
+         <string>saldo</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="Cuota">
+        <property name="styleSheet">
+         <string notr="true">font: 36pt &quot;Playbill&quot;;
+color: rgb(0, 81, 255);</string>
+        </property>
+        <property name="text">
+         <string>Cuota:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="_cuota">
+        <property name="styleSheet">
+         <string notr="true">font: 36pt &quot;Playbill&quot;;
+color: rgb(255, 179, 2);</string>
+        </property>
+        <property name="text">
+         <string>cuot</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="nselect">
+        <property name="styleSheet">
+         <string notr="true">font: 30pt &quot;Playbill&quot;;
+color: rgb(0, 81, 255);</string>
+        </property>
+        <property name="text">
+         <string>Número Seleccionado</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="_nseleccionado">
+        <property name="styleSheet">
+         <string notr="true">font: 26pt &quot;Playbill&quot;;
+background-color: rgb(53, 15, 71);
+color: rgb(255, 183, 1);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>6</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget_7">
+   <property name="geometry">
+    <rect>
+     <x>152</x>
+     <y>510</y>
+     <width>601</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_7">
+    <item>
+     <widget class="QPushButton" name="_apostar">
+      <property name="styleSheet">
+       <string notr="true">QPushButton#_apostar{font: 36pt &quot;Playbill&quot;;
+color: rgb(0, 81, 255);
+background-color: rgb(156, 189, 0);
+}
+QPushButton#_apostar:hover{
+background-color:rgb(86, 124, 255);
+ padding-right: 50px;
+}</string>
+      </property>
+      <property name="text">
+       <string>Apostar</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="dineroganado">
+        <property name="styleSheet">
+         <string notr="true">font: 36pt &quot;Playbill&quot;;
+color: rgb(0, 81, 255);</string>
+        </property>
+        <property name="text">
+         <string>Dinero Ganado</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="_valorganado">
+        <property name="styleSheet">
+         <string notr="true">font: 36pt &quot;Playbill&quot;;
+color: rgb(255, 179, 2);</string>
+        </property>
+        <property name="text">
+         <string>$$$</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
