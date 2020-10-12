@@ -29,7 +29,7 @@ class JuegoTragaperras:
         self.saldo = bd.traerValor()
         
         if self.mod == 1:
-            self.cuota = 2
+            self.cuota = 2 * 10000
             if self.saldo >= self.cuota:
                 for i in range(self.n):
                     if self.r == self.resultado[i]:
@@ -37,7 +37,7 @@ class JuegoTragaperras:
             else:
                 self.cuota = 0
         elif self.mod == 2:
-            self.cuota = 3
+            self.cuota = 3 * 10000
             if self.saldo >= self.cuota:
                 self.arreglo = np.unique(self.resultado)
                 if len(self.arreglo)  < 3:
@@ -45,7 +45,7 @@ class JuegoTragaperras:
             else:
                 self.cuota = 0
         elif self.mod == 3:
-            self.cuota = 36
+            self.cuota = 36 * 10000
             if self.saldo >= self.cuota:
                 self.contador = 0
                 for i in range(self.n):
@@ -56,7 +56,7 @@ class JuegoTragaperras:
             else:
                 self.couta = 0
         elif self.mod == 4:
-            self.cuota = 36
+            self.cuota = 36 * 10000
             if self.saldo >= self.cuota:
                 self.arreglo = np.unique(self.resultado)
                 if len(self.arreglo) == 1:
@@ -64,7 +64,7 @@ class JuegoTragaperras:
             else:
                 self.couta = 0
         elif self.mod == 5:
-            self.cuota = 216
+            self.cuota = 216 * 10000
             if self.saldo >= self.cuota:
                 self.arreglo = np.array([self.r, self.r, self.r])
                 if (self.arreglo == self.resultado).all():

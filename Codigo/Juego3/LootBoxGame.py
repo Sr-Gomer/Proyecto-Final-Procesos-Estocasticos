@@ -10,7 +10,7 @@ import bd
 import numpy as np
 import numpy.random as rnd
 imgbox = "./" + __package__ +"./Lootbox.png"
-qtCreatorFile = "./" +__package__+"./Lootbox.ui" # Nombre del archivo qt aquí.
+qtCreatorFile = /Lootbox.ui" # Nombre del archivo qt aquí.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
 
 class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -38,48 +38,48 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def hasmoney(self):
         if(self.dinero >= self.costo):
-            self.Play(self.tier, self.costo, self.dinero)   
+            self.Play(self.tier, self.costo, self.dinero)
         else:
             self.informacion.setText("Recarga tu saldo!")
     def Verify(self):
         self.actualizarSaldo()
         if(self.rbtnTier1.isChecked() == True):
-            self.setTier_Costo(1,150000)
+            self.setTier_Costo(1,15000)
         elif(self.rbtnTier2.isChecked() == True):
-            self.setTier_Costo(2,200000)
+            self.setTier_Costo(2,25000)
         elif(self.rbtnTier3.isChecked() == True):
-            self.setTier_Costo(3,250000)
+            self.setTier_Costo(3,40000)
         elif(self.rbtnTier4.isChecked() == True):
-            self.setTier_Costo(4,350000)  
+            self.setTier_Costo(4,55000) 
         elif(self.rbtnTier5.isChecked() == True):
-            self.setTier_Costo(5,450000)
+            self.setTier_Costo(5,70000)
         self.hasmoney()
 
     def Play(self,tier, costo, dinero):
         self.dinero -= costo
-        self.lootBox = np.array([1, 2, 2, 3, 3, 3])
-        self.ganancia = 0        
-        self.CAoro = 6
-        self.CAplata = 3
+        self.ganancia = 0
+        self.CAoro = 20
+        self.CAplata = 4
 
         self.profitOro = costo * self.CAoro
         self.profitPlata = costo * self.CAplata
         self.ResetUi()
         for i in range(tier):
-          self.shot = rnd.randint(0, 6)
-          if self.lootBox[self.shot] == 1:
+          self.shot = rnd.rand()
+          print(str(self.shot))
+          if  self.shot <= 0.05:
             self.ganancia += self.profitOro
             self.triunfo = "Ganaste el premio de oro!"
             self.ShowResultLbl(i+1,self.triunfo)
-          elif self.lootBox[self.shot] == 2:
+          elif self.shot <= 0.25:
             self.ganancia += self.profitPlata
             self.triunfo = "Ganaste el premio de plata!"
             self.ShowResultLbl(i+1,self.triunfo)
-          elif self.lootBox[self.shot] == 3:
+          else:
             self.ganancia += 0
             self.triunfo = "Ganaste el premio de bronce!"
-            self.ShowResultLbl(i+1,self.triunfo)
-        
+            self.ShowResultLbl(i+1,self.triuCAoronfo)
+
         self.dinero += self.ganancia
         self._txtg.setText(str(self.ganancia))
         self.saldoTotal.setText(str(self.dinero))
