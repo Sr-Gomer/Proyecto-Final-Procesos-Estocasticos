@@ -25,7 +25,7 @@ class UIWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         #creo el juego
 
     def comboboxChanged(self):
-        self.cuotas = np.array([2, 3, 36, 36, 216])
+        self.cuotas = np.array([2*10000, 3*10000, 36*10000, 36*10000, 216*10000])
         self._cuota.setText(str(self.cuotas[self._modalidad.currentIndex()]))
         
     def printapostar(self):
