@@ -71,90 +71,36 @@ color: rgb(0, 81, 255);</string>
          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="styleSheet">
-         <string notr="true">font: 26pt &quot;Playbill&quot;;
+         <string notr="true">font: 24pt &quot;Playbill&quot;;
 background-color: rgb(53, 0, 71);
 color: rgb(255, 183, 1);</string>
         </property>
         <item>
          <property name="text">
-          <string>1 </string>
+          <string>Número Especifico</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>2</string>
+          <string>Cualquier Par</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>3</string>
+          <string>Par en especifico</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>4</string>
+          <string>Terna o trio</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>5</string>
+          <string>Terna en especifico</string>
          </property>
         </item>
        </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="nselect">
-          <property name="styleSheet">
-           <string notr="true">font: 30pt &quot;Playbill&quot;;
-color: rgb(0, 81, 255);</string>
-          </property>
-          <property name="text">
-           <string>Número Seleccionado</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="_nseleccionado">
-          <property name="styleSheet">
-           <string notr="true">font: 26pt &quot;Playbill&quot;;
-background-color: rgb(53, 15, 71);
-color: rgb(255, 183, 1);</string>
-          </property>
-          <item>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
       </item>
      </layout>
     </item>
@@ -206,6 +152,60 @@ color: rgb(255, 179, 2);</string>
         <property name="text">
          <string>cuot</string>
         </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="nselect">
+        <property name="styleSheet">
+         <string notr="true">font: 30pt &quot;Playbill&quot;;
+color: rgb(0, 81, 255);</string>
+        </property>
+        <property name="text">
+         <string>Número Seleccionado</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="_nseleccionado">
+        <property name="styleSheet">
+         <string notr="true">font: 26pt &quot;Playbill&quot;;
+background-color: rgb(53, 15, 71);
+color: rgb(255, 183, 1);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>6</string>
+         </property>
+        </item>
        </widget>
       </item>
      </layout>

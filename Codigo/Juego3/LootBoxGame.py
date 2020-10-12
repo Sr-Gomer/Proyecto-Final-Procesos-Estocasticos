@@ -44,9 +44,9 @@ class MyApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def Verify(self):
         self.actualizarSaldo()
         if(self.rbtnTier1.isChecked() == True):
-            self.setTier_Costo(1,30)
+            self.setTier_Costo(1,150000)
         elif(self.rbtnTier2.isChecked() == True):
-            self.setTier_Costo(2,70)
+            self.setTier_Costo(2,200000)
         elif(self.rbtnTier3.isChecked() == True):
             self.setTier_Costo(3,250000)
         elif(self.rbtnTier4.isChecked() == True):
