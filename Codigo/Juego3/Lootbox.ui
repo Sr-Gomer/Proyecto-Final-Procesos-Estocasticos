@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1125</width>
+    <width>1163</width>
     <height>675</height>
    </rect>
   </property>
@@ -253,7 +253,7 @@
     </font>
    </property>
    <property name="text">
-    <string>$100000</string>
+    <string>$15000</string>
    </property>
   </widget>
   <widget class="QLabel" name="price2">
@@ -271,7 +271,7 @@
     </font>
    </property>
    <property name="text">
-    <string>$150000</string>
+    <string>$25000</string>
    </property>
   </widget>
   <widget class="QLabel" name="price3">
@@ -289,7 +289,7 @@
     </font>
    </property>
    <property name="text">
-    <string>$250000</string>
+    <string>$40000</string>
    </property>
   </widget>
   <widget class="QLabel" name="price4">
@@ -307,7 +307,7 @@
     </font>
    </property>
    <property name="text">
-    <string>$350000</string>
+    <string>$55000</string>
    </property>
   </widget>
   <widget class="QLabel" name="price5">
@@ -325,7 +325,7 @@
     </font>
    </property>
    <property name="text">
-    <string>$450000</string>
+    <string>$70000</string>
    </property>
   </widget>
   <widget class="QListView" name="resultados">
